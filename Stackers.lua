@@ -136,7 +136,7 @@ local funcs = {
 		table.insert(stacks[currentStack],a^b)
 	end,
 	["("] = function()
-		table.insert(stacks[currentStack],table.remove(stacks[currentStack]),1)
+		table.insert(stacks[currentStack],1,table.remove(stacks[currentStack]))
 	end,
 	[")"] = function()
 		table.insert(stacks[currentStack],table.remove(stacks[currentStack],1))
@@ -658,7 +658,7 @@ while true do
 		stacks[currentStack] = tableCopy(tabs[keyword:sub(5,-1)])
 	elseif keyword:sub(1,2) == '¯' then
 		table.insert(stacks[currentStack],#tabs[keyword:sub(3,-1)])
-	elseif keyword:sub(1,1) == "c" and keyword:len() == 2 then
+	elseif keyword:sub(1,1) == "c" then
 		table.insert(stacks[currentStack],string.byte(keyword:sub(2,2)))
 	elseif keyword == 's' then
 		table.insert(stacks[currentStack],string.byte(' '))
