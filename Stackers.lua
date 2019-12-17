@@ -319,7 +319,7 @@ local funcs = {
 		table.insert(stacks[currentStack],table.remove(stacks[currentStack])^2)
 	end,
 	["❒"] = function()
-		table.insert(stacks[currentStack],table.remove(stacks[currentStack])^2)
+		table.insert(stacks[currentStack],table.remove(stacks[currentStack])^3)
 	end,
 	["△"] = function()
 		local h = table.remove(stacks[currentStack])
